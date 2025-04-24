@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 namespace Rabbit {
     public class SceneLoaderM {
-        public bool loadingEndedTrigger { get; private set; }
+        public bool inProgress { get; private set; }
 
         public IEnumerator LoadScene(string sceneNameToLoad) {
+            inProgress = true;
+            
             var scenes = new List<string>();
             var sceneCount = SceneManager.sceneCount;
 
@@ -32,6 +34,8 @@ namespace Rabbit {
             var activeScene = SceneManager.GetSceneByName(sceneNameToLoad);
 
             if (activeScene.IsValid()) SceneManager.SetActiveScene(activeScene);
+            
+            inProgress = false;
         }
     }
 }

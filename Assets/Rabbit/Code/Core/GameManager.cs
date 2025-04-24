@@ -6,9 +6,9 @@ namespace Rabbit
     {
         [SerializeField] SceneLoader _sceneLoader;
 
-        public void RequestSceneLoad(string sceneName, bool withoutAnims = false)
+        public void RequestSceneLoad(string sceneName, bool withAnims = false)
         {
-            _sceneLoader.TryLoadScene(sceneName, withoutAnims);
+            _sceneLoader.TryLoadScene(sceneName, withAnims);
         }
     }
 }

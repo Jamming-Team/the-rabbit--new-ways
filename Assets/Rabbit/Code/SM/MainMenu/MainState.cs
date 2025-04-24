@@ -6,7 +6,7 @@ namespace Rabbit.MainMenu {
             // Debug.Log("OnUIButtonPressed : " + type);
             switch (type) {
                 case GC.UI.ButtonTypes.Play: {
-                    GameManager.Instance.RequestSceneLoad(GC.Scenes.GAMEPLAY);
+                    GameManager.Instance.RequestSceneLoad(GC.Scenes.GAMEPLAY, true);
                     break;
                 }
                 case GC.UI.ButtonTypes.Settings: {

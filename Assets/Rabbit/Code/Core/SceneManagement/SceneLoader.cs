@@ -8,26 +8,26 @@ namespace Rabbit {
 
         bool _isLoading;
 
-        public void TryLoadScene(string sceneName, bool withoutAnims = false) {
+        public void TryLoadScene(string sceneName, bool withAnims = false) {
             if (_isLoading) return;
 
-            StartCoroutine(LoadSceneAsync(sceneName));
+            StartCoroutine(LoadSceneAsync(sceneName, withAnims));
         }
 
-        IEnumerator LoadSceneAsync(string sceneName, bool withoutAnims = false) {
+        IEnumerator LoadSceneAsync(string sceneName, bool withAnims = false) {
             _isLoading = true;
 
-            if (withoutAnims) {
+            if (withAnims) {
                 _view.SetAnim(SceneLoaderV.LoadingAnims.In);
-                yield return new WaitUntil(() => _view.animEndedTrigger);
+                yield return new WaitUntil(() => !_view.inProgress);
             }
 
             StartCoroutine(_model.LoadScene(sceneName));
 
             // yield return modelCor;
-            yield return new WaitUntil(() => _model.loadingEndedTrigger);
+            yield return new WaitUntil(() => !_model.inProgress);
 
-            if (withoutAnims) _view.SetAnim(SceneLoaderV.LoadingAnims.Out);
+            if (withAnims) _view.SetAnim(SceneLoaderV.LoadingAnims.Out);
 
             _isLoading = false;
         }
