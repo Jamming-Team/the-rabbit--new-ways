@@ -4,19 +4,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Rabbit
-{
-    public class SceneLoaderM
-    {
+namespace Rabbit {
+    public class SceneLoaderM {
         public bool loadingEndedTrigger { get; private set; }
 
-        public IEnumerator LoadScene(string sceneNameToLoad)
-        {
+        public IEnumerator LoadScene(string sceneNameToLoad) {
             var scenes = new List<string>();
-            int sceneCount = SceneManager.sceneCount;
-            Debug.Log("It's inside");
-            for (var i = sceneCount - 1; i >= 0; i--)
-            {
+            var sceneCount = SceneManager.sceneCount;
+
+            for (var i = sceneCount - 1; i >= 0; i--) {
                 var sceneAt = SceneManager.GetSceneAt(i);
                 if (!sceneAt.isLoaded) continue;
 
@@ -25,10 +21,7 @@ namespace Rabbit
                 scenes.Add(sceneName);
             }
 
-            foreach (var scene in scenes)
-            {
-                yield return SceneManager.UnloadSceneAsync(scene);
-            }
+            foreach (var scene in scenes) yield return SceneManager.UnloadSceneAsync(scene);
 
             // Optional: UnloadUnusedAssets - unloads all unused assets from memory
             System.GC.Collect();
@@ -36,12 +29,9 @@ namespace Rabbit
 
             yield return SceneManager.LoadSceneAsync(sceneNameToLoad, LoadSceneMode.Additive);
 
-            Scene activeScene = SceneManager.GetSceneByName(sceneNameToLoad);
+            var activeScene = SceneManager.GetSceneByName(sceneNameToLoad);
 
-            if (activeScene.IsValid())
-            {
-                SceneManager.SetActiveScene(activeScene);
-            }
+            if (activeScene.IsValid()) SceneManager.SetActiveScene(activeScene);
         }
     }
 }
