@@ -9,5 +9,13 @@ namespace Rabbit
             public const string MAIN_MENU = "MainMenu";
             public const string GAMEPLAY = "Gameplay";
         }
+
+        public static class UI {
+            public enum ButtonTypes {
+                Play,
+                Settings,
+                Back,
+            }
+        }
     }
 }
