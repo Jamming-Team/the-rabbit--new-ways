@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Rabbit/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Rabbit/Scenes/Preloader.unity
+    guid: 0e347500a0cac29a5b04da676cf423f0
+  - enabled: 1
+    path: Assets/Rabbit/Scenes/Core.unity
+    guid: bf664aa2c1d197d1a87b20ad5d931b0d
+  - enabled: 1
+    path: Assets/Rabbit/Scenes/Empty.unity
+    guid: 7f0e296b3ebfca7ff982757e8f94e33f
+  - enabled: 1
+    path: Assets/Rabbit/Scenes/MainMenu.unity
+    guid: 64678141eaabf58848202919def74e6c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
