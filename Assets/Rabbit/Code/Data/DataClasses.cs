@@ -66,8 +66,10 @@ namespace Rabbit {
     
     #endregion
 
+    [Serializable]
     public class ContentData {
         public List<GameBlockDataSO> gameBlocks;
+        public int currentBlockNum = 0;
     }
     
 }
