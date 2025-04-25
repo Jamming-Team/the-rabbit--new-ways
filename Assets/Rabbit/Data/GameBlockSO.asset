@@ -30,7 +30,7 @@ MonoBehaviour:
     - rid: 6632277806128300233
       type: {class: ComicsData, ns: Rabbit, asm: Assembly-CSharp}
       data:
-        comicsPrefab: {fileID: 1385047064398491144, guid: c212317d136b6a373b66c54d8593e138, type: 3}
+        comicsPrefab: {fileID: 9213884344136894193, guid: c212317d136b6a373b66c54d8593e138, type: 3}
     - rid: 6632277806128300234
       type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
       data:

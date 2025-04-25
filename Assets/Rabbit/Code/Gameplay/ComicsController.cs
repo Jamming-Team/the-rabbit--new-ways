@@ -33,8 +33,9 @@ namespace Rabbit {
         void NextPage() {
             _curPageNum++;
             
-            if (_curPageNum == _pages.Count) {
+            if (_curPageNum >= _pages.Count) {
                 NarrativeEnded?.Invoke();
+                _skipButton.onClick.RemoveListener(SkipPiece);
                 return;
             }
 

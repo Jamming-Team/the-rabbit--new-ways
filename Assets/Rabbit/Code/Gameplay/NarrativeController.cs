@@ -10,7 +10,7 @@ namespace Rabbit {
 
         NarrativeBase _curBase;
         
-        void Start() {
+        void Awake() {
             GameEvents.Narrative.OnStartNarrative += OnStartNarrative;
             _animationController.NarrativeEnded += HandleNarrativeEnd;
         }
@@ -46,7 +46,7 @@ namespace Rabbit {
 
             _comicsRoot.SetActive(true);
             
-            _curBase = Instantiate(data.comicsPrefab, _comicsRoot.transform).GetComponent<NarrativeBase>();
+            _curBase = Instantiate(data.comicsPrefab, _comicsRoot.transform).GetComponentInChildren<NarrativeBase>();
 
             _curBase.NarrativeEnded += HandleNarrativeEnd;
 

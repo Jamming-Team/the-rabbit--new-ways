@@ -32,8 +32,9 @@ namespace Rabbit.Gameplay {
         public void DecideOnNextAction_State() {
             _blockStateIndex++;
             
-            if (_blockStateIndex > _currentBlock.Count) {
+            if (_blockStateIndex >= _currentBlock.Count) {
                 DecideOnNextAction_Block();
+                return;
             }
 
             switch (stateData.type) {
@@ -61,7 +62,7 @@ namespace Rabbit.Gameplay {
                 // return;
             }
 
-            GameManager.Instance.RequestSceneLoad(GC.Scenes.GAMEPLAY);
+            GameManager.Instance.RequestSceneLoad(GC.Scenes.GAMEPLAY, true);
         }
         
     }

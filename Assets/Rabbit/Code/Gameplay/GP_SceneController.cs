@@ -9,6 +9,7 @@ namespace Rabbit {
         
         protected virtual void Start() {
             GameManager.Instance.RequestData(this);
+            data.currentBlockNum = 0;
             _stateMachine.Init(this, false);
         }
 
