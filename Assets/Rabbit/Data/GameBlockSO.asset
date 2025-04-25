@@ -12,7 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76b76205a5e4dcfb957facecde4d815, type: 3}
   m_Name: GameBlockSO
   m_EditorClassIdentifier: 
-  states: []
+  blockName: 
+  states:
+  - rid: 6632277806128300221
+  - rid: 6632277806128300222
+  - rid: 6632277806128300223
+  - rid: -2
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 6632277806128300221
+      type: {class: LevelSetupStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        levelPrefab: {fileID: 0}
+    - rid: 6632277806128300222
+      type: {class: GameplayStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data: 
+    - rid: 6632277806128300223
+      type: {class: LevelSetupStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        levelPrefab: {fileID: 0}

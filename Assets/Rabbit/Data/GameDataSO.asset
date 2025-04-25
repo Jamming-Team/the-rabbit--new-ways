@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GameDataSO
   m_EditorClassIdentifier: 
   content:
-    gameBlocks: []
-    currentBlockNum: 1
+    gameBlocks:
+    - {fileID: 11400000, guid: 257c2422d35a4d2d7841fa2460f9db88, type: 2}
+    currentBlockNum: 0
