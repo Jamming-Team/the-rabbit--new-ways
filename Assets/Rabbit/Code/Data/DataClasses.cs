@@ -24,7 +24,7 @@ namespace Rabbit {
     }
 
     [Serializable]
-    public class CutsceneStateData : IActionStateData {
+    public class NarrativeStateData : IActionStateData {
         public ActionStateTypes type { get; set; } = ActionStateTypes.Cutscene;
         [SerializeReference] public INarrativeData narrative;
     }

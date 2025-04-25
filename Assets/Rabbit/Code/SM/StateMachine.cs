@@ -8,20 +8,27 @@ namespace Rabbit {
         public IState currentState { get; private set; }
 
 
-        public void Init(MonoBehaviour core) {
+        public void Init(MonoBehaviour core, bool autoSetInitialState) {
             GetComponentsInChildren(_states);
             _states.ForEach(x => {
                 x.OnTransitionRequired += ChangeState;
                 x.Init(core);
             });
-            ChangeState(_states[0].GetType());
+            if (autoSetInitialState)
+                ChangeState(_states[0].GetType());
         }
+
+        public void UpdateSM(float delta) {
+            currentState.UpdateState(delta);
+        }
+
 
         public void OnDestroy() {
             _states.ForEach(x => { x.OnTransitionRequired -= ChangeState; });
+            currentState.Exit();
         }
 
-        void ChangeState(Type nextStateType) {
+        public void ChangeState(Type nextStateType) {
             var nextState = _states.Find(x => x.GetType() == nextStateType);
 
             if (nextState != null && !Equals(currentState, nextState)) {

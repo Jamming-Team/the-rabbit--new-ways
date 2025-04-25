@@ -7,6 +7,8 @@ namespace Rabbit {
 
         public void Init(MonoBehaviour core);
 
+        public void UpdateState(float delta);
+
         public void Enter();
 
         public void Exit();
@@ -23,6 +25,8 @@ namespace Rabbit {
             _core = (TContextType)core;
             gameObject.SetActive(false);
         }
+
+        public virtual void UpdateState(float delta) { }
 
         public virtual void Enter() {
             gameObject.SetActive(true);
