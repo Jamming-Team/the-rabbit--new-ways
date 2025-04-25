@@ -14,23 +14,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockName: 
   states:
-  - rid: 6632277806128300221
-  - rid: 6632277806128300222
-  - rid: 6632277806128300223
-  - rid: -2
+  - rid: 6632277806128300232
+  - rid: 6632277806128300234
+  - rid: 6632277806128300237
+  - rid: 6632277806128300238
+  - rid: 6632277806128300240
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 6632277806128300221
+    - rid: 6632277806128300232
+      type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        narrative:
+          rid: 6632277806128300233
+    - rid: 6632277806128300233
+      type: {class: ComicsData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        comicsPrefab: {fileID: 1385047064398491144, guid: c212317d136b6a373b66c54d8593e138, type: 3}
+    - rid: 6632277806128300234
+      type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        narrative:
+          rid: 6632277806128300236
+    - rid: 6632277806128300236
+      type: {class: UIAnimationData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        animationTriggerName: Out
+    - rid: 6632277806128300237
       type: {class: LevelSetupStateData, ns: Rabbit, asm: Assembly-CSharp}
       data:
-        levelPrefab: {fileID: 0}
-    - rid: 6632277806128300222
-      type: {class: GameplayStateData, ns: Rabbit, asm: Assembly-CSharp}
-      data: 
-    - rid: 6632277806128300223
-      type: {class: LevelSetupStateData, ns: Rabbit, asm: Assembly-CSharp}
+        levelPrefab: {fileID: 7884648238972133938, guid: ab7a1f611cb2ca391b69f760d9000c97, type: 3}
+    - rid: 6632277806128300238
+      type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
       data:
-        levelPrefab: {fileID: 0}
+        narrative:
+          rid: 6632277806128300239
+    - rid: 6632277806128300239
+      type: {class: OtherNarrativeData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        otherType: 0
+    - rid: 6632277806128300240
+      type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        narrative:
+          rid: 6632277806128300241
+    - rid: 6632277806128300241
+      type: {class: UIAnimationData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        animationTriggerName: In

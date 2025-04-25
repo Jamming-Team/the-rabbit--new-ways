@@ -19,13 +19,16 @@ namespace Rabbit {
         }
 
         public void UpdateSM(float delta) {
-            currentState.UpdateState(delta);
+            if (_states.Count > 0)
+                currentState.UpdateState(delta);
         }
 
 
         public void OnDestroy() {
             _states.ForEach(x => { x.OnTransitionRequired -= ChangeState; });
-            currentState.Exit();
+            
+            if (_states.Count > 0) 
+                currentState.Exit();
         }
 
         public void ChangeState(Type nextStateType) {

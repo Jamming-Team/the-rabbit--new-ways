@@ -28,5 +28,9 @@ namespace Rabbit {
             // noop (== `no op` == `no operation`)
             Debug.Log("MCDataFillerVisitor.DefaultVisit");
         }
+        
+        public void Visit(GP_SceneController requester) {
+            requester.data = _dataSO.content;
+        }
     }
 }

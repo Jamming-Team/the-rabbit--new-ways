@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Rabbit
 {
-    public class GameManager :Singleton<GameManager>
+    public class GameManager : Singleton<GameManager>
     {
         [SerializeField] SceneLoader _sceneLoader;
         [SerializeField] GameDataSO _dataSO;
@@ -18,6 +18,10 @@ namespace Rabbit
         public void RequestSceneLoad(string sceneName, bool withAnims = false)
         {
             _sceneLoader.TryLoadScene(sceneName, withAnims);
+        }
+        
+        public void RequestData(IVisitable requester) {
+            _dataManager.TrySupply(requester);
         }
     }
 }
