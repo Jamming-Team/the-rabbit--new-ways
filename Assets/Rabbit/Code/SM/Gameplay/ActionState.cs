@@ -45,7 +45,7 @@ namespace Rabbit.Gameplay {
                     _stateMachine.ChangeState(typeof(GameplayState));
                     break;
                 }
-                case ActionStateTypes.Cutscene: {
+                case ActionStateTypes.Narrative: {
                     _stateMachine.ChangeState(typeof(NarrativeState));
                     break;
                 }

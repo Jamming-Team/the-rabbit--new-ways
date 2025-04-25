@@ -25,14 +25,14 @@ namespace Rabbit {
 
     [Serializable]
     public class NarrativeStateData : IActionStateData {
-        public ActionStateTypes type { get; set; } = ActionStateTypes.Cutscene;
+        public ActionStateTypes type { get; set; } = ActionStateTypes.Narrative;
         [SerializeReference] public INarrativeData narrative;
     }
 
     public enum ActionStateTypes {
         SetupScene,
         Gameplay,
-        Cutscene
+        Narrative
     }
     
     #endregion
@@ -51,17 +51,29 @@ namespace Rabbit {
     }
     
     [Serializable]
-    public class CutsceneData : INarrativeData {
-        public NarrativeTypes type { get; set; } = NarrativeTypes.Cutscene;
+    public class UIAnimationData : INarrativeData {
+        public NarrativeTypes type { get; set; } = NarrativeTypes.UIAnimation;
 
-        public int cutscene;
+        public string animationTriggerName;
+    }
+    
+    [Serializable]
+    public class OtherNarrativeData : INarrativeData {
+        public NarrativeTypes type { get; set; } = NarrativeTypes.Other;
+
+        public OtherNarrativeTypes otherType;
+    }
+
+    public enum OtherNarrativeTypes {
+        HideNarrativeViews,
     }
     
     
     public enum NarrativeTypes {
         Comics,
         Dialogue,
-        Cutscene
+        UIAnimation,
+        Other
     }
     
     #endregion
