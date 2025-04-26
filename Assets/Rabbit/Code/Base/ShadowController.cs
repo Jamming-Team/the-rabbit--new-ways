@@ -6,65 +6,49 @@ namespace Rabbit
     public class ShadowController : MonoBehaviour
     {
         [SerializeField] private GameObject _shadowObject;
-        [SerializeField] private float _phaseDuration = 5f;
-        [SerializeField] private int _maxPhases = 3;
-
-        private int _currentPhase = 0;
-        private float _phaseTimer = 0f;
-        private bool _isGrowing = false;
-
-        public event Action<int> OnPhaseChanged;
-        public event Action OnMaxGrowthReached;
+        [SerializeField] private ShadowPhaseManager _phaseManager;
         
-        public void StartGrowth()
+        public event Action<int> OnPhaseChanged; 
+        public event Action OnMaxGrowthReached;
+
+        private void Start()
         {
-            ResetGrowth();
-            _isGrowing = true;
+            _phaseManager.OnPhaseChanged += HandlePhaseChanged;
+            _phaseManager.OnMaxGrowthReached += HandleMaxGrowthReached;
         }
 
-        public void DeactivateShadow()
+        private void OnDestroy()
         {
-            _isGrowing = false;
+            if (_phaseManager == null) return;
+                    
+            _phaseManager.OnPhaseChanged -= HandlePhaseChanged;
+            _phaseManager.OnMaxGrowthReached -= HandleMaxGrowthReached;
         }
 
-        // START for tests
-        // private void Start()
-        // {
-        //     StartGrowth();
-        // }
-        // END for tests
-
-        private void Update()
+        public void StartShadowGrowth()
         {
-            if (!_isGrowing)
-                return;
-
-            _phaseTimer += Time.deltaTime;
-
-            if (_phaseTimer >= _phaseDuration)
-            {
-                MoveToNextPhase();
-                _phaseTimer = 0f;
-            }
+            _phaseManager.StartGrowth();
         }
 
-        private void MoveToNextPhase()
+        public void StopShadowGrowth()
         {
-            _currentPhase++;
-
-            OnPhaseChanged?.Invoke(_currentPhase);
-
-            if (_currentPhase >= _maxPhases)
-            {
-                DeactivateShadow();
-                OnMaxGrowthReached?.Invoke();
-            }
+            _phaseManager.DeactivateShadow();
         }
 
-        private void ResetGrowth()
+        private void HandlePhaseChanged(int phase)
         {
-            _currentPhase = 0;
-            _phaseTimer = 0f;
+            OnPhaseChanged?.Invoke(phase);
+            UpdateShadowVisual(phase);
+        }
+
+        private void HandleMaxGrowthReached()
+        {
+            OnMaxGrowthReached?.Invoke();
+        }
+        
+        private void UpdateShadowVisual(int phase)
+        {
+            // TODO: Заменить спрайт тени на более большой
         }
     }
 }
