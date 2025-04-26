@@ -1,4 +1,5 @@
 using System;
+using Rabbit.Gameplay;
 using UnityEngine;
 // using Rabbit.Gameplay.InterfaceState;
 
@@ -15,6 +16,8 @@ namespace Rabbit {
             GameManager.Instance.RequestData(this);
             data.currentBlockNum = 0;
             _stateMachine.Init(this, false);
+            
+            _stateMachine.ChangeState(typeof(ActionState));
         }
 
         void Update() {

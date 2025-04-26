@@ -21,6 +21,8 @@ namespace Rabbit {
     [Serializable]
     public class GameplayStateData : IActionStateData {
         public ActionStateTypes type { get; set; } = ActionStateTypes.Gameplay;
+
+        public float timeTillNextAction;
     }
 
     [Serializable]
@@ -89,6 +91,14 @@ namespace Rabbit {
     public class ContentData {
         public List<GameBlockDataSO> gameBlocks;
         public int currentBlockNum = 0;
+
+        public float timeTillEnd = 300;
+        
+        public class TimeConvertedData {
+            public float hours;
+            public float minutes;
+        }
+        
     }
     
 }

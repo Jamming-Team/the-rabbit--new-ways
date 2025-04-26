@@ -19,7 +19,10 @@ MonoBehaviour:
   - rid: 6632277806128300237
   - rid: 6632277806128300238
   - rid: 6632277806128300240
+  - rid: 6632277826291105868
   - rid: 6632277826291105861
+  - rid: 6632277826291105869
+  - rid: 6632277826291105870
   references:
     version: 2
     RefIds:
@@ -69,6 +72,23 @@ MonoBehaviour:
         narrative:
           rid: 6632277826291105862
     - rid: 6632277826291105862
+      type: {class: DialogueNarrativeData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        dialogueData: {fileID: 11400000, guid: 818cde77dfc39a3e1be1b4df5c6ee179, type: 2}
+    - rid: 6632277826291105868
+      type: {class: GameplayStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        timeTillNextAction: 5
+    - rid: 6632277826291105869
+      type: {class: GameplayStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        timeTillNextAction: 5
+    - rid: 6632277826291105870
+      type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        narrative:
+          rid: 6632277826291105871
+    - rid: 6632277826291105871
       type: {class: DialogueNarrativeData, ns: Rabbit, asm: Assembly-CSharp}
       data:
         dialogueData: {fileID: 11400000, guid: 818cde77dfc39a3e1be1b4df5c6ee179, type: 2}

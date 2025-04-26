@@ -7,6 +7,7 @@ namespace Rabbit.Gameplay {
         [SerializeField] StateMachine _stateMachine;
 
         public IActionStateData stateData => _currentBlock[_blockStateIndex];
+        public float currentTime;
         
         List<IActionStateData> _currentBlock;
         int _blockStateIndex;
@@ -14,8 +15,9 @@ namespace Rabbit.Gameplay {
         
         public override void Init(MonoBehaviour core) {
             _core = (GP_SceneController)core;
+
+            currentTime = 0;
             
-            GameEvents.UI.OnButtonPressed += InputReaderOnOnPausePressed;
 
             _stateMachine.Init(this, false);
             StartBlock();
