@@ -5,7 +5,7 @@ namespace Rabbit {
     public class NarrativeController : MonoBehaviour {
 
         [SerializeField] GameObject _comicsRoot;
-        [SerializeField] GameObject _dialogueRoot;
+        [SerializeField] DialogueController _dialogueController;
         [SerializeField] UIAnimationController _animationController;
 
         NarrativeBase _curBase;
@@ -13,6 +13,7 @@ namespace Rabbit {
         void Awake() {
             GameEvents.Narrative.OnStartNarrative += OnStartNarrative;
             _animationController.NarrativeEnded += HandleNarrativeEnd;
+            _dialogueController.NarrativeEnded += HandleNarrativeEnd;
         }
 
         void OnDestroy() {
@@ -22,6 +23,7 @@ namespace Rabbit {
             
             GameEvents.Narrative.OnStartNarrative -= OnStartNarrative;
             _animationController.NarrativeEnded -= HandleNarrativeEnd;
+            _dialogueController.NarrativeEnded -= HandleNarrativeEnd;
         }
 
         void OnStartNarrative(INarrativeData obj) {
@@ -38,7 +40,15 @@ namespace Rabbit {
                     HandleUIAnimation(obj as UIAnimationData);
                     break;
                 }
+                case NarrativeTypes.Dialogue: {
+                    HandleDialogue(obj as DialogueNarrativeData);
+                    break;
+                }
             }
+        }
+
+        void HandleDialogue(DialogueNarrativeData data) {
+            _dialogueController.StartDialogue(data.dialogueData);
         }
 
         void HandleComics(ComicsData data) {
