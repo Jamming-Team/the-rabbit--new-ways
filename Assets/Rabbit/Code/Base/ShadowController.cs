@@ -7,8 +7,7 @@ namespace Rabbit
     {
         [SerializeField] private GameObject _shadowObject;
         [SerializeField] private float _phaseDuration = 5f;
-
-        private const int MaxPhases = 3;
+        [SerializeField] private int _maxPhases = 3;
 
         private int _currentPhase = 0;
         private float _phaseTimer = 0f;
@@ -55,7 +54,7 @@ namespace Rabbit
 
             OnPhaseChanged?.Invoke(_currentPhase);
 
-            if (_currentPhase >= MaxPhases)
+            if (_currentPhase >= _maxPhases)
             {
                 DeactivateShadow();
                 OnMaxGrowthReached?.Invoke();
