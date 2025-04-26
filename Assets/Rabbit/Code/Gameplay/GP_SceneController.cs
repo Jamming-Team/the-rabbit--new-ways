@@ -1,11 +1,15 @@
 using System;
 using UnityEngine;
+// using Rabbit.Gameplay.InterfaceState;
 
 namespace Rabbit {
     public class GP_SceneController: MonoBehaviour, IVisitable {
         [SerializeField] StateMachine _stateMachine;
 
         [HideInInspector] public ContentData data;
+        
+        [HideInInspector]
+        public Type interfaceType;
         
         protected virtual void Start() {
             GameManager.Instance.RequestData(this);

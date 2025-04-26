@@ -15,6 +15,9 @@ namespace Rabbit
                 Play,
                 Settings,
                 Back,
+                Pause,
+                Quit,
+                Restart,
             }
         }
     }

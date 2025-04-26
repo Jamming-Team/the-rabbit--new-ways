@@ -6,6 +6,9 @@ namespace Rabbit
     {
         [SerializeField] SceneLoader _sceneLoader;
         [SerializeField] GameDataSO _dataSO;
+        [SerializeField] InputReader _inputReader;
+        
+        public InputReader inputReader => _inputReader;
         
         DataManager _dataManager;
 
@@ -13,6 +16,7 @@ namespace Rabbit
             base.Awake();
             Application.targetFrameRate = 60;
             _dataManager = new DataManager(_dataSO);
+            _inputReader.EnablePlayerActions();
         }
 
         public void RequestSceneLoad(string sceneName, bool withAnims = false)

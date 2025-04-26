@@ -21,6 +21,14 @@ namespace Rabbit {
             //         frequency: 6));
         }
 
+        void OnDestroy() {
+            if (_sequence.isAlive)
+                _sequence.Complete();
+            
+            if (_sequence2.isAlive)
+                _sequence2.Complete();
+        }
+
 
         public void ChangeSize(bool shouldIncrease) {
             if (_sequence.isAlive)

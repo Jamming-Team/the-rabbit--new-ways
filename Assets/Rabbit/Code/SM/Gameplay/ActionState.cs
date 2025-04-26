@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Rabbit.Gameplay.InterfaceState;
 using UnityEngine;
 
 namespace Rabbit.Gameplay {
@@ -14,9 +15,31 @@ namespace Rabbit.Gameplay {
         public override void Init(MonoBehaviour core) {
             _core = (GP_SceneController)core;
             
+            GameEvents.UI.OnButtonPressed += InputReaderOnOnPausePressed;
+
             _stateMachine.Init(this, false);
             StartBlock();
             DecideOnNextAction_State();
+        }
+
+        protected override void OnEnter() {
+            base.OnEnter();
+            
+            GameEvents.UI.OnButtonPressed += InputReaderOnOnPausePressed;
+        }
+        
+        protected override void OnExit() {
+            base.OnExit();
+            
+            GameEvents.UI.OnButtonPressed -= InputReaderOnOnPausePressed;
+        }
+
+        void InputReaderOnOnPausePressed(GC.UI.ButtonTypes type) {
+            if (type != GC.UI.ButtonTypes.Pause)
+                return;
+            
+            _core.interfaceType = typeof(PauseState);
+            RequestTransition<InterfaceState.InterfaceState>();
         }
 
         public override void UpdateState(float delta) {
@@ -58,11 +81,13 @@ namespace Rabbit.Gameplay {
             _core.data.currentBlockNum++;
             if (_core.data.currentBlockNum == _core.data.gameBlocks.Count) {
                 // Some endgame logics here
-                Debug.LogError("Game is Over");
+                _core.interfaceType = typeof(PostGameState);
+                RequestTransition<InterfaceState.InterfaceState>();
+                // Debug.LogError("Game is Over");
                 // return;
             }
 
-            GameManager.Instance.RequestSceneLoad(GC.Scenes.GAMEPLAY, true);
+            // GameManager.Instance.RequestSceneLoad(GC.Scenes.GAMEPLAY, true);
         }
         
     }

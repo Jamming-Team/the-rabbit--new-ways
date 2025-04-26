@@ -456,7 +456,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 29769d7f5a34b41f49fc8654fc64e244, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -659,6 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneLoader: {fileID: 1498519074}
   _dataSO: {fileID: 11400000, guid: bf22f8e0e301d12cd94f4808bc78d284, type: 2}
+  _inputReader: {fileID: 11400000, guid: f00918c1ddd48090484969cf04bfd61c, type: 2}
 --- !u!4 &1888844413
 Transform:
   m_ObjectHideFlags: 0
