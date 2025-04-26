@@ -30,11 +30,22 @@ namespace Rabbit {
         public ActionStateTypes type { get; set; } = ActionStateTypes.Narrative;
         [SerializeReference] public INarrativeData narrative;
     }
+    
+    [Serializable]
+    public class DoStuffStateData : IActionStateData {
+        public ActionStateTypes type { get; set; } = ActionStateTypes.DoStuff;
+        public DoStuffTypes stuffType;
+    }
 
     public enum ActionStateTypes {
         SetupScene,
         Gameplay,
-        Narrative
+        Narrative,
+        DoStuff
+    }
+    
+    public enum DoStuffTypes {
+        UpDifficulty
     }
     
     #endregion
@@ -90,15 +101,26 @@ namespace Rabbit {
     [Serializable]
     public class ContentData {
         public List<GameBlockDataSO> gameBlocks;
+        [SerializeReference] public List<IActionStateData> defeatBlock;
         public int currentBlockNum = 0;
 
-        public float timeTillEnd = 300;
-        
-        public class TimeConvertedData {
-            public float hours;
-            public float minutes;
-        }
-        
+        public List<DifficultySet> difficulties;
+
+        // public float timeTillEnd = 300;
+        //
+        // public class TimeConvertedData {
+        //     public float hours;
+        //     public float minutes;
+        // }
+
+
+
+    }
+
+    [Serializable]
+    public class DifficultySet {
+        public float timeTillNextShadow = 3f;
+        public int maxShadows = 2;
     }
     
 }

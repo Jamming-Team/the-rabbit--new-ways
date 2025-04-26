@@ -15,4 +15,25 @@ MonoBehaviour:
   content:
     gameBlocks:
     - {fileID: 11400000, guid: 257c2422d35a4d2d7841fa2460f9db88, type: 2}
+    defeatBlock:
+    - rid: 6632277837119750210
     currentBlockNum: 0
+    difficulties:
+    - timeTillNextShadow: 3
+      maxShadows: 1
+    - timeTillNextShadow: 2
+      maxShadows: 2
+    - timeTillNextShadow: 2
+      maxShadows: 3
+  references:
+    version: 2
+    RefIds:
+    - rid: 6632277837119750210
+      type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        narrative:
+          rid: 6632277837119750211
+    - rid: 6632277837119750211
+      type: {class: ComicsData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        comicsPrefab: {fileID: 9213884344136894193, guid: c212317d136b6a373b66c54d8593e138, type: 3}

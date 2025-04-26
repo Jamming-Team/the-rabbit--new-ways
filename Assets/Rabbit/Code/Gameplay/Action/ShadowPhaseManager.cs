@@ -14,22 +14,17 @@ namespace Rabbit
 
         public event Action<int> OnPhaseChanged;
         public event Action OnMaxGrowthReached;
+
+        void Awake() {
+            GameEvents.Gameplay.OnGameplayUpdate += OnGameplayUpdate;
+        }
         
-        public void StartGrowth()
-        {
-            if (_isGrowing) return; 
+        void OnDestroy() {
+            GameEvents.Gameplay.OnGameplayUpdate -= OnGameplayUpdate;
+        }
+
+        void OnGameplayUpdate(float obj) {
             
-            ResetGrowth();
-            _isGrowing = true;
-        }
-
-        public void DeactivateShadow()
-        {
-            _isGrowing = false;
-        }
-
-        private void Update()
-        {
             if (!_isGrowing)
                 return;
 
@@ -42,8 +37,36 @@ namespace Rabbit
             }
         }
 
-        private void MoveToNextPhase()
+        public void StartGrowth()
         {
+            if (_isGrowing) return; 
+            
+            ResetGrowth();
+            _isGrowing = true;
+
+            MoveToNextPhase();
+        }
+
+        public void DeactivateShadow()
+        {
+            _isGrowing = false;
+        }
+
+        // private void Update()
+        // {
+        //     if (!_isGrowing)
+        //         return;
+        //
+        //     _phaseTimer += Time.deltaTime;
+        //
+        //     if (_phaseTimer >= _phaseDuration)
+        //     {
+        //         MoveToNextPhase();
+        //         _phaseTimer = 0f;
+        //     }
+        // }
+
+        private void MoveToNextPhase() {
             _currentPhase++;
 
             if (_currentPhase >= _maxPhases)
@@ -59,7 +82,7 @@ namespace Rabbit
 
         private void ResetGrowth()
         {
-            _currentPhase = 0;
+            _currentPhase = -1;
             _phaseTimer = 0f;
         }
     }

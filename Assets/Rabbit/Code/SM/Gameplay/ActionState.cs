@@ -11,6 +11,10 @@ namespace Rabbit.Gameplay {
         
         List<IActionStateData> _currentBlock;
         int _blockStateIndex;
+
+        List<IActionStateData> _defeatBlock;
+
+        public GP_SceneController core => _core;
         
         
         public override void Init(MonoBehaviour core) {
@@ -28,12 +32,16 @@ namespace Rabbit.Gameplay {
             base.OnEnter();
             
             GameEvents.UI.OnButtonPressed += InputReaderOnOnPausePressed;
+            GameEvents.Gameplay.MaxGrowthReached += DefeatTheGame;
         }
-        
+
+
+
         protected override void OnExit() {
             base.OnExit();
             
             GameEvents.UI.OnButtonPressed -= InputReaderOnOnPausePressed;
+            GameEvents.Gameplay.MaxGrowthReached -= DefeatTheGame;
         }
 
         void InputReaderOnOnPausePressed(GC.UI.ButtonTypes type) {
@@ -75,6 +83,10 @@ namespace Rabbit.Gameplay {
                     _stateMachine.ChangeState(typeof(NarrativeState));
                     break;
                 }
+                case ActionStateTypes.DoStuff: {
+                    _stateMachine.ChangeState(typeof(DoStuffState));
+                    break;
+                }
             }
             
         }
@@ -90,6 +102,12 @@ namespace Rabbit.Gameplay {
             }
 
             // GameManager.Instance.RequestSceneLoad(GC.Scenes.GAMEPLAY, true);
+        }
+        
+        void DefeatTheGame() {
+            _blockStateIndex = -1;
+            _currentBlock = _core.data.defeatBlock;
+            DecideOnNextAction_State();
         }
         
     }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Rabbit
@@ -8,6 +9,8 @@ namespace Rabbit
     {
         [SerializeField] private Sprite _offSprite;
         [SerializeField] private Sprite _onSprite;
+
+        [SerializeField] List<ShadowController> _affectedShadows;
 
         private SpriteRenderer _spriteRenderer;
 
@@ -27,6 +30,7 @@ namespace Rabbit
 
         public void TurnOn()
         {
+            _affectedShadows.ForEach(x => x.StopShadowGrowth());
             SetLightStatus(true);
         }
 

@@ -16,12 +16,16 @@ namespace Rabbit.Gameplay {
         }
 
         public override void UpdateState(float delta) {
+            
             _core.currentTime += delta;
             timer += delta;
 
             if (timer >= ((GameplayStateData)_core.stateData).timeTillNextAction) {
                 _core.DecideOnNextAction_State();
+                return;
             }
+            
+            GameEvents.Gameplay.OnGameplayUpdate?.Invoke(delta);
         }
         
     }

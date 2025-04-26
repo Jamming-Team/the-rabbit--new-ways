@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockName: 
   states:
+  - rid: 6632277837119750212
   - rid: 6632277806128300232
   - rid: 6632277806128300234
-  - rid: 6632277806128300237
   - rid: 6632277806128300238
   - rid: 6632277806128300240
   - rid: 6632277826291105868
+  - rid: 6632277837119750217
   - rid: 6632277826291105861
   - rid: 6632277826291105869
   - rid: 6632277826291105870
@@ -44,10 +45,6 @@ MonoBehaviour:
       type: {class: UIAnimationData, ns: Rabbit, asm: Assembly-CSharp}
       data:
         animationTriggerName: Out
-    - rid: 6632277806128300237
-      type: {class: LevelSetupStateData, ns: Rabbit, asm: Assembly-CSharp}
-      data:
-        levelPrefab: {fileID: 7884648238972133938, guid: ab7a1f611cb2ca391b69f760d9000c97, type: 3}
     - rid: 6632277806128300238
       type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
       data:
@@ -78,11 +75,11 @@ MonoBehaviour:
     - rid: 6632277826291105868
       type: {class: GameplayStateData, ns: Rabbit, asm: Assembly-CSharp}
       data:
-        timeTillNextAction: 5
+        timeTillNextAction: 10
     - rid: 6632277826291105869
       type: {class: GameplayStateData, ns: Rabbit, asm: Assembly-CSharp}
       data:
-        timeTillNextAction: 5
+        timeTillNextAction: 1000
     - rid: 6632277826291105870
       type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
       data:
@@ -92,3 +89,11 @@ MonoBehaviour:
       type: {class: DialogueNarrativeData, ns: Rabbit, asm: Assembly-CSharp}
       data:
         dialogueData: {fileID: 11400000, guid: 818cde77dfc39a3e1be1b4df5c6ee179, type: 2}
+    - rid: 6632277837119750212
+      type: {class: DoStuffStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        stuffType: 0
+    - rid: 6632277837119750217
+      type: {class: DoStuffStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        stuffType: 0
