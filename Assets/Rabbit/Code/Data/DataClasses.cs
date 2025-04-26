@@ -63,6 +63,13 @@ namespace Rabbit {
 
         public OtherNarrativeTypes otherType;
     }
+    
+    [Serializable]
+    public class DialogueNarrativeData : INarrativeData {
+        public NarrativeTypes type { get; set; } = NarrativeTypes.Dialogue;
+
+        public DialogueDataSO dialogueData;
+    }
 
     public enum OtherNarrativeTypes {
         HideNarrativeViews,
