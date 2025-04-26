@@ -10,6 +10,7 @@ namespace Rabbit {
         public List<DialoguePart> parts;
     }
 
+    [Serializable]
     public class DialoguePart {
         public SpeakerType type;
         

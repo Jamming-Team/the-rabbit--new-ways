@@ -12,20 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7156b97c3af74f5bb377ae5b5cee9b0e, type: 3}
   m_Name: Dialogue1
   m_EditorClassIdentifier: 
-  actions:
-  - rid: 6632277826291105858
-  - rid: 6632277826291105859
-  references:
-    version: 2
-    RefIds:
-    - rid: 6632277826291105858
-      type: {class: DialogueHeadAction, ns: Rabbit, asm: Assembly-CSharp}
-      data:
-        updateLeftSprite: 0
-        leftSprite: {fileID: 0}
-        updateRightSprite: 0
-        rightSprite: {fileID: 0}
-    - rid: 6632277826291105859
-      type: {class: DialogueTextAction, ns: Rabbit, asm: Assembly-CSharp}
-      data:
-        text: 
+  parts:
+  - type: 0
+    text: dfgdgfdfdfg
+  - type: 1
+    text: jhgjkhjk
+  - type: 1
+    text: ffffffffffffffffffffff
+  - type: 0
+    text: fghgfhgfhgfh

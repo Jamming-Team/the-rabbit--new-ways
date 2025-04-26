@@ -31,6 +31,7 @@ namespace Rabbit {
             _data = data;
             _partIndex = -1;
             _animator.SetTrigger("In");
+            _continueButton.gameObject.SetActive(true);
             Continue();
         }
 
@@ -39,6 +40,7 @@ namespace Rabbit {
 
             if (_partIndex >= _data.parts.Count) {
                 _animator.SetTrigger("Out");
+                _continueButton.gameObject.SetActive(false);
                 NarrativeEnded?.Invoke();
                 return;
             }

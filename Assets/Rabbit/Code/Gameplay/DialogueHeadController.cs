@@ -1,10 +1,10 @@
+using System;
 using PrimeTween;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Rabbit {
     public class DialogueHeadController : MonoBehaviour {
-        [SerializeField] Animator _animator;
 
         [SerializeField] Image _headImage;
         
@@ -12,6 +12,13 @@ namespace Rabbit {
         Vector3 _defaultScale = Vector3.one;
         Vector3 _increasedScale = new Vector3(1.5f, 1.5f, 1f);
         bool _shouldIncrease;
+        Vector3 _rotationVector = new Vector3(0f, 0f, 7);
+
+        public void Awake() {
+            Sequence.Create()
+                .Chain(Tween.ShakeLocalRotation(_headImage.transform, strength: new Vector3(0, 0, 15), duration: 1,
+                    frequency: 10));
+        }
 
 
         public void ChangeSize(bool shouldIncrease) {
@@ -29,12 +36,6 @@ namespace Rabbit {
             else
                 _sequence = Sequence.Create()
                     .Chain(Tween.Custom(_increasedScale, _defaultScale, 1f, newVal => _headImage.transform.localScale = newVal));
-        }
-        
-
-        public static class HeadAnimsNames {
-            public static int increase = Animator.StringToHash("Increase");
-            public static int decrease = Animator.StringToHash("Decrease");
         }
     }
 }
