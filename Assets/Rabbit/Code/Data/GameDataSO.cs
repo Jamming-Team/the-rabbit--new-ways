@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Alchemy.Serialization;
+using AYellowpaper.SerializedCollections;
 
 namespace Rabbit {
     [CreateAssetMenu(fileName = "GameDataSO", menuName = "Rabbit/GameDataSO", order = 0)]
@@ -25,8 +26,8 @@ namespace Rabbit {
     [Serializable]
     public class MusicData {
         // public List<AudioClip> audioClips;
-
-        public Dictionary<MusicBundleType, MusicBundle> bundles;
+        [SerializedDictionary("Type", "Bundle")]
+        public SerializedDictionary<MusicBundleType, MusicBundle> bundles;
         public float crossFadeTime = 2.0f;
     }
     
