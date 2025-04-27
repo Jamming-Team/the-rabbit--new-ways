@@ -103,6 +103,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _phaseDuration: 5
   _maxPhases: 5
+  _running:
+    clips:
+    - {fileID: 8300000, guid: d8910a08c8af4fa2785390e8c72af4c2, type: 3}
+    mixerGroup: {fileID: 7184256061046978509, guid: 1fb3fa1d8aad3b13e908882a3c7dbe43, type: 2}
+    playOnAwake: 0
+    frequentSound: 0
+    mute: 0
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    priority: 128
+    volume: 1
+    pitch: 1
+    panStereo: 0
+    spatialBlend: 1
+    reverbZoneMix: 1
+    dopplerLevel: 1
+    spread: 0
+    minDistance: 1
+    maxDistance: 15
+    ignoreListenerVolume: 0
+    ignoreListenerPause: 0
+    rolloffMode: 2
+    shouldPlayOnLoop: 1
+    objectToStick: {fileID: 0}
+  _exiting:
+    clips:
+    - {fileID: 8300000, guid: bceef2fe5e94a9b3495a6c03d3733466, type: 3}
+    - {fileID: 8300000, guid: 2ca47667f19e0f4cb9a7698a7322f880, type: 3}
+    mixerGroup: {fileID: 7184256061046978509, guid: 1fb3fa1d8aad3b13e908882a3c7dbe43, type: 2}
+    playOnAwake: 0
+    frequentSound: 0
+    mute: 0
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    priority: 128
+    volume: 1
+    pitch: 1
+    panStereo: 0
+    spatialBlend: 1
+    reverbZoneMix: 1
+    dopplerLevel: 1
+    spread: 0
+    minDistance: 1
+    maxDistance: 15
+    ignoreListenerVolume: 0
+    ignoreListenerPause: 0
+    rolloffMode: 2
+    shouldPlayOnLoop: 0
+    objectToStick: {fileID: 0}
 --- !u!114 &8984366273543781560
 MonoBehaviour:
   m_ObjectHideFlags: 0

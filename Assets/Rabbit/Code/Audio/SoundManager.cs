@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Pool;
+using UnityEngine.Serialization;
 
 namespace Rabbit {
   public class SoundManager : MonoBehaviour{
@@ -17,8 +18,11 @@ namespace Rabbit {
 
         [SerializeField] public AudioMixer mixer;
 
+        public bool initialized = false;
+
         void Start() {
             InitializePool();
+            initialized = true;
         }
 
         public SoundBuilder CreateSoundBuilder() => new SoundBuilder(this);
@@ -39,6 +43,8 @@ namespace Rabbit {
         }
 
         public SoundEmitter Get() {
+            if (!initialized)
+                return null;
             return soundEmitterPool.Get();
         }
 

@@ -50,13 +50,16 @@ namespace Rabbit {
             }
         }
 
-        public void PlaySound(SoundData soundData, Transform playTransform = null) {
+        public SoundEmitter PlaySound(SoundData soundData, Transform playTransform = null) {
+            if (!_soundModel.initialized)
+                return null;
+            
             var a = _soundModel.CreateSoundBuilder()
                 .WithRandomPitch();
             if (playTransform != null) {
                 a.WithPosition(playTransform.position);
             } 
-            a.Play(soundData);
+            return a.Play(soundData);
         }
         
         void AdjustMixerVolume() {

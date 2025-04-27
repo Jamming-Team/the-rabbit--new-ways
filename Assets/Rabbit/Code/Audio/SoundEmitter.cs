@@ -45,6 +45,8 @@ namespace Rabbit {
             audioSource.ignoreListenerPause = data.ignoreListenerPause;
             
             audioSource.rolloffMode = data.rolloffMode;
+
+            audioSource.loop = data.shouldPlayOnLoop;
         }
 
         public void Play() {

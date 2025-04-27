@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2271817783874250610, guid: b354d76986cd231dfbeae7402917aa92, type: 3}
       propertyPath: m_Name
-      value: ebakaFull Variant
+      value: ebakaHand
       objectReference: {fileID: 0}
     - target: {fileID: 4129589540274887010, guid: b354d76986cd231dfbeae7402917aa92, type: 3}
       propertyPath: m_Sprite
@@ -56,6 +56,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6272519146615806108, guid: b354d76986cd231dfbeae7402917aa92, type: 3}
+      propertyPath: _exiting.clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272519146615806108, guid: b354d76986cd231dfbeae7402917aa92, type: 3}
+      propertyPath: '_exiting.clips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddec7b589904128bb9950ce6a84ad9d4, type: 3}
+    - target: {fileID: 6272519146615806108, guid: b354d76986cd231dfbeae7402917aa92, type: 3}
+      propertyPath: '_running.clips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: af7d0ba8ff3f0ff828601691aca4151e, type: 3}
     - target: {fileID: 8984366273543781560, guid: b354d76986cd231dfbeae7402917aa92, type: 3}
       propertyPath: _sprites.Array.size
       value: 5

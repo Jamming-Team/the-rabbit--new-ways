@@ -8,12 +8,17 @@ namespace Rabbit
         [SerializeField] private float _phaseDuration = 5f;
         [SerializeField] private int _maxPhases = 3;
 
+        [SerializeField] SoundData _running;
+        [SerializeField] SoundData _exiting;
+
         private int _currentPhase = 0;
         private float _phaseTimer = 0f;
         private bool _isGrowing = false;
 
         public event Action<int> OnPhaseChanged;
         public event Action OnMaxGrowthReached;
+
+        SoundEmitter _runningEmitter;
 
         void Awake() {
             GameEvents.Gameplay.OnGameplayUpdate += OnGameplayUpdate;
@@ -40,7 +45,9 @@ namespace Rabbit
 
         public void StartGrowth()
         {
-            if (_isGrowing) return; 
+            if (_isGrowing) return;
+
+            _runningEmitter = AudioManager.Instance.PlaySound(_running, transform);
             
             ResetGrowth();
             _isGrowing = true;
@@ -50,7 +57,12 @@ namespace Rabbit
 
         public void DeactivateShadow()
         {
+            if (_runningEmitter) {
+                _runningEmitter.Stop();
+                _runningEmitter = null;
+            }
             
+            AudioManager.Instance.PlaySound(_exiting, transform);
             
             ResetGrowth();
             _isGrowing = false;
