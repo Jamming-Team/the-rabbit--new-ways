@@ -196,7 +196,7 @@ MonoBehaviour:
   _light: {fileID: 7234115763805015230}
   _statesColors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.766981, g: 0.766981, b: 0.766981, a: 1}
+  - {r: 0.40784314, g: 0.40784314, b: 0.40784314, a: 1}
   _onSound:
     clips:
     - {fileID: 8300000, guid: 48f448aa8d07e8807a5a9c5b081ce315, type: 3}
