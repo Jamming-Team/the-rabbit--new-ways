@@ -11,6 +11,9 @@ namespace Rabbit
         [SerializeField] private Sprite _onSprite;
         [SerializeField] Light _light;
         [SerializeField] Color[] _statesColors = new Color[2];
+        
+        [SerializeField] SoundData _onSound;
+        [SerializeField] SoundData _offSound;
 
         [SerializeField] List<ShadowController> _affectedShadows;
 
@@ -36,6 +39,8 @@ namespace Rabbit
                 x.SetCanGrow(false);
             });
             SetLightStatus(true);
+            
+            AudioManager.Instance.PlaySound(_onSound, transform);
         }
 
         public void TurnOff()
@@ -46,6 +51,8 @@ namespace Rabbit
                 // x.StopShadowGrowth();
                 x.SetCanGrow(true);
             });
+            
+            AudioManager.Instance.PlaySound(_offSound, transform);
         }
 
         private void SetLightStatus(bool isOn)
