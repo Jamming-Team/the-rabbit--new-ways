@@ -83,7 +83,7 @@ namespace Rabbit {
 
         public DialogueDataSO dialogueData;
     }
-
+ 
     public enum OtherNarrativeTypes {
         HideNarrativeViews,
     }
