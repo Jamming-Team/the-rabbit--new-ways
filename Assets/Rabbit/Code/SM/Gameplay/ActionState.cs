@@ -95,6 +95,7 @@ namespace Rabbit.Gameplay {
             _core.data.currentBlockNum++;
             if (_core.data.currentBlockNum == _core.data.gameBlocks.Count) {
                 // Some endgame logics here
+                GameEvents.UI.OnSetPostGameText?.Invoke("VICTORY!");
                 _core.interfaceType = typeof(PostGameState);
                 RequestTransition<InterfaceState.InterfaceState>();
                 // Debug.LogError("Game is Over");
@@ -105,6 +106,7 @@ namespace Rabbit.Gameplay {
         }
         
         void DefeatTheGame() {
+            GameEvents.UI.OnSetPostGameText?.Invoke("DEFEAT");
             _blockStateIndex = -1;
             _currentBlock = _core.data.defeatBlock;
             DecideOnNextAction_State();

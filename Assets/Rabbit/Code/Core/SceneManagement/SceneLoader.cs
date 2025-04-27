@@ -26,6 +26,7 @@ namespace Rabbit {
 
             // yield return modelCor;
             yield return new WaitUntil(() => !_model.inProgress);
+            yield return new WaitForSeconds(0.2f);
 
             if (withAnims) _view.SetAnim(SceneLoaderV.LoadingAnims.Out);
 

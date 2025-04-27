@@ -16,6 +16,7 @@ MonoBehaviour:
   states:
   - rid: 6632277837119750212
   - rid: 6632277806128300232
+  - rid: 6632277858168864850
   - rid: 6632277806128300234
   - rid: 6632277806128300238
   - rid: 6632277806128300240
@@ -147,3 +148,12 @@ MonoBehaviour:
       type: {class: UIAnimationData, ns: Rabbit, asm: Assembly-CSharp}
       data:
         animationTriggerName: Out
+    - rid: 6632277858168864850
+      type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        narrative:
+          rid: 6632277858168864852
+    - rid: 6632277858168864852
+      type: {class: ComicsData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        comicsPrefab: {fileID: 9213884344136894193, guid: 82e09649930e03e3d91858c7853975fd, type: 3}

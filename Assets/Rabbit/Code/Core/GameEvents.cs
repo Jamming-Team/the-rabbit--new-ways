@@ -13,7 +13,8 @@ namespace Rabbit {
         
         public static class UI {
             public static Action<GC.UI.ButtonTypes> OnButtonPressed;
-            
+
+            public static Action<string> OnSetPostGameText;
 
 
 

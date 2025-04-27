@@ -76,6 +76,18 @@ PrefabInstance:
       propertyPath: _offSprite
       value: 
       objectReference: {fileID: -1665241478, guid: c6f0b7bbf5b6706a3b0e243aee725eed, type: 3}
+    - target: {fileID: 3763735412345471735, guid: 7c73e912756b1eda3af94f6e1fcf6f34, type: 3}
+      propertyPath: _statesColors.Array.data[1].b
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763735412345471735, guid: 7c73e912756b1eda3af94f6e1fcf6f34, type: 3}
+      propertyPath: _statesColors.Array.data[1].g
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763735412345471735, guid: 7c73e912756b1eda3af94f6e1fcf6f34, type: 3}
+      propertyPath: _statesColors.Array.data[1].r
+      value: 0.6666667
+      objectReference: {fileID: 0}
     - target: {fileID: 4716683367044959337, guid: 7c73e912756b1eda3af94f6e1fcf6f34, type: 3}
       propertyPath: m_Name
       value: Light5_wall
