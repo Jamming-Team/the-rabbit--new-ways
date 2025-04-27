@@ -23,6 +23,8 @@ namespace Rabbit
 
         public bool HasAvailableBattery()
         {
+            GameEvents.Gameplay.OnBatteryCountChanged?.Invoke(_availableBatteries);
+            
             return _availableBatteries > 0;
         }
 
@@ -32,11 +34,15 @@ namespace Rabbit
             {
                 _availableBatteries--;
             }
+            
+            GameEvents.Gameplay.OnBatteryCountChanged?.Invoke(_availableBatteries);
         }
 
         public void ReturnBattery()
         {
             _availableBatteries++;
+            
+            GameEvents.Gameplay.OnBatteryCountChanged?.Invoke(_availableBatteries);
         }
     }
 }

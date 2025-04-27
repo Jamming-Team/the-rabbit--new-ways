@@ -8,6 +8,7 @@ namespace Rabbit {
             public static Action<float> OnGameplayUpdate;
             public static Action<DifficultySet> OnChangeDifficultySet;
             public static Action MaxGrowthReached;
+            public static Action<int> OnBatteryCountChanged;
         }
         
         public static class UI {
