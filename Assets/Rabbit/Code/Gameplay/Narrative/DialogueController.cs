@@ -16,6 +16,8 @@ namespace Rabbit {
         
         [SerializeField] Animator _animator;
 
+        [SerializeField] Animator _headAnimator;
+        
         DialogueDataSO _data;
         int _partIndex;
 
@@ -47,23 +49,27 @@ namespace Rabbit {
             
             _dialogueText.text = _data.parts[_partIndex].text;
 
-            switch (_data.parts[_partIndex].type) {
-                case SpeakerType.Player: {
-                    _nameNext.text = "You";
-                    
-                    _dialogueHeadLeft.ChangeSize(true);
-                    _dialogueHeadRight.ChangeSize(false);
-                    break;
-                }
-                
-                case SpeakerType.Shadow: {
-                    _nameNext.text = "Shadow";
-                    
-                    _dialogueHeadLeft.ChangeSize(false);
-                    _dialogueHeadRight.ChangeSize(true);
-                    break;
-                }
-            }
+            if (_data.parts[_partIndex].shouldEye)
+                _headAnimator.SetTrigger("ShouldEye");
+            
+            
+            // switch (_data.parts[_partIndex].type) {
+            //     case SpeakerType.Player: {
+            //         _nameNext.text = "You";
+            //         
+            //         _dialogueHeadLeft.ChangeSize(true);
+            //         _dialogueHeadRight.ChangeSize(false);
+            //         break;
+            //     }
+            //     
+            //     case SpeakerType.Shadow: {
+            //         _nameNext.text = "Shadow";
+            //         
+            //         _dialogueHeadLeft.ChangeSize(false);
+            //         _dialogueHeadRight.ChangeSize(true);
+            //         break;
+            //     }
+            // }
             
         }
 

@@ -12,11 +12,14 @@ namespace Rabbit {
 
     [Serializable]
     public class DialoguePart {
-        public SpeakerType type;
+        // public SpeakerType type;
         
         // public string speakerName;
         [TextAreaAttribute(minLines: 4, maxLines: 8)]
         public string text;
+
+        public bool shouldEye;
+
     }
 
     public enum SpeakerType {

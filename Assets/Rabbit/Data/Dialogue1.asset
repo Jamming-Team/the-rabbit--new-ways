@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Dialogue1
   m_EditorClassIdentifier: 
   parts:
-  - type: 0
-    text: dfgdgfdfdfg
-  - type: 1
-    text: jhgjkhjk
-  - type: 1
-    text: ffffffffffffffffffffff
-  - type: 0
-    text: fghgfhgfhgfh
+  - text: dfgdgfdfdfg
+    shouldEye: 0
+  - text: jhgjkhjk
+    shouldEye: 0
+  - text: ffffffffffffffffffffff
+    shouldEye: 1
+  - text: fghgfhgfhgfh
+    shouldEye: 0
