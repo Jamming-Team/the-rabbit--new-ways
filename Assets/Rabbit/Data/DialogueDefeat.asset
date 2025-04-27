@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7156b97c3af74f5bb377ae5b5cee9b0e, type: 3}
-  m_Name: Dialogue1
+  m_Name: DialogueDefeat
   m_EditorClassIdentifier: 
   parts:
-  - text: Don't resist, it's useless.
+  - text: it's over.
     shouldEye: 0
-  - text: Darkness is already here, I'm is here.
+  - text: Now we are one.
+    shouldEye: 1
+  - text: It's not so scary, right?  This is not the end - this is beginning.
     shouldEye: 0
-  - text: Just let me get close.
+  - text: There are many lost souls in the world that need us.
+    shouldEye: 0
+  - text: We'll help them next night... together.
     shouldEye: 0

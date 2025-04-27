@@ -16,15 +16,16 @@ MonoBehaviour:
     gameBlocks:
     - {fileID: 11400000, guid: 257c2422d35a4d2d7841fa2460f9db88, type: 2}
     defeatBlock:
-    - rid: 6632277837119750210
+    - rid: 6632277853031629046
+    - rid: 6632277853031629048
     currentBlockNum: 0
     difficulties:
-    - timeTillNextShadow: 3
+    - timeTillNextShadow: 5
       maxShadows: 1
-    - timeTillNextShadow: 2
+    - timeTillNextShadow: 3
       maxShadows: 2
-    - timeTillNextShadow: 2
-      maxShadows: 3
+    - timeTillNextShadow: 3
+      maxShadows: 4
   audio:
     musicVolume: 0.001
     sfxVolume: 0.56
@@ -40,12 +41,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 6632277837119750210
+    - rid: 6632277853031629046
       type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
       data:
         narrative:
-          rid: 6632277837119750211
-    - rid: 6632277837119750211
-      type: {class: ComicsData, ns: Rabbit, asm: Assembly-CSharp}
+          rid: 6632277853031629047
+    - rid: 6632277853031629047
+      type: {class: UIAnimationData, ns: Rabbit, asm: Assembly-CSharp}
       data:
-        comicsPrefab: {fileID: 9213884344136894193, guid: c212317d136b6a373b66c54d8593e138, type: 3}
+        animationTriggerName: Out
+    - rid: 6632277853031629048
+      type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        narrative:
+          rid: 6632277853031629049
+    - rid: 6632277853031629049
+      type: {class: DialogueNarrativeData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        dialogueData: {fileID: 11400000, guid: b42df57219ecc5e7c8f8fdd7118cf16d, type: 2}
