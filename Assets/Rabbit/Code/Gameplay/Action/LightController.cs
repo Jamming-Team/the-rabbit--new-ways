@@ -11,10 +11,10 @@ namespace Rabbit
         {
             _lightSource = GetComponent<LightSource>();
 
-            if (BatteryManager.Instance == null)
-            {
-                Debug.LogError("BatteryManager not found!", this);
-            }
+            // if (BatteryManager.Instance == null)
+            // {
+            //     Debug.LogError("BatteryManager not found!", this);
+            // }
         }
 
         public void Interact()

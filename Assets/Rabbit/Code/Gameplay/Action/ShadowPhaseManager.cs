@@ -17,6 +17,7 @@ namespace Rabbit
 
         void Awake() {
             GameEvents.Gameplay.OnGameplayUpdate += OnGameplayUpdate;
+            // DeactivateShadow();
         }
         
         void OnDestroy() {
@@ -49,7 +50,11 @@ namespace Rabbit
 
         public void DeactivateShadow()
         {
+            
+            
+            ResetGrowth();
             _isGrowing = false;
+            MoveToNextPhase();
         }
 
         // private void Update()
@@ -84,6 +89,7 @@ namespace Rabbit
         {
             _currentPhase = -1;
             _phaseTimer = 0f;
+
         }
     }
 }

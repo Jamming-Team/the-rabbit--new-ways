@@ -1,16 +1,23 @@
+using System;
 using UnityEngine;
 
 namespace Rabbit {
     public class CameraController : MonoBehaviour {
         [SerializeField] Camera _camera;
         [SerializeField] LayerMask _layerInteractive;
-        
 
-        void Update()
-        {
-            DetectClick();
+
+        void Awake() {
+            GameEvents.Gameplay.OnGameplayUpdate += OnGameplayUpdate;
         }
 
+        void OnDestroy() {
+            GameEvents.Gameplay.OnGameplayUpdate -= OnGameplayUpdate;
+        }
+
+        void OnGameplayUpdate(float obj) {
+            DetectClick();
+        }
 
         private void DetectClick() 
         {
