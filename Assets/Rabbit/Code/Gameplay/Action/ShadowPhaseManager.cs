@@ -61,8 +61,8 @@ namespace Rabbit
                 _runningEmitter.Stop();
                 _runningEmitter = null;
             }
-            
-            AudioManager.Instance.PlaySound(_exiting, transform);
+            if (_isGrowing)
+                AudioManager.Instance.PlaySound(_exiting, transform);
             
             ResetGrowth();
             _isGrowing = false;

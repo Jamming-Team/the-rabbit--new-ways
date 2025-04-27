@@ -197,6 +197,56 @@ MonoBehaviour:
   _statesColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.766981, g: 0.766981, b: 0.766981, a: 1}
+  _onSound:
+    clips:
+    - {fileID: 8300000, guid: 48f448aa8d07e8807a5a9c5b081ce315, type: 3}
+    mixerGroup: {fileID: 7184256061046978509, guid: 1fb3fa1d8aad3b13e908882a3c7dbe43, type: 2}
+    playOnAwake: 0
+    frequentSound: 0
+    mute: 0
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    priority: 128
+    volume: 1
+    pitch: 1
+    panStereo: 0
+    spatialBlend: 1
+    reverbZoneMix: 1
+    dopplerLevel: 1
+    spread: 0
+    minDistance: 1
+    maxDistance: 15
+    ignoreListenerVolume: 0
+    ignoreListenerPause: 0
+    rolloffMode: 2
+    shouldPlayOnLoop: 0
+    objectToStick: {fileID: 0}
+  _offSound:
+    clips:
+    - {fileID: 8300000, guid: 4e421f30e82fc35408e2c8cdf7998d02, type: 3}
+    mixerGroup: {fileID: 7184256061046978509, guid: 1fb3fa1d8aad3b13e908882a3c7dbe43, type: 2}
+    playOnAwake: 0
+    frequentSound: 0
+    mute: 0
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    priority: 128
+    volume: 1
+    pitch: 1
+    panStereo: 0
+    spatialBlend: 1
+    reverbZoneMix: 1
+    dopplerLevel: 1
+    spread: 0
+    minDistance: 1
+    maxDistance: 15
+    ignoreListenerVolume: 0
+    ignoreListenerPause: 0
+    rolloffMode: 2
+    shouldPlayOnLoop: 0
+    objectToStick: {fileID: 0}
   _affectedShadows: []
 --- !u!114 &2158223069972547640
 MonoBehaviour:

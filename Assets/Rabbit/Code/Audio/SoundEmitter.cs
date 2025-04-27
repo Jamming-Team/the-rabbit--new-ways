@@ -77,7 +77,7 @@ namespace Rabbit {
             _manager.ReturnToPool(this);
         }
 
-        public void WithRandomPitch(float min = -0.05f, float max = 0.05f) {
+        public void WithRandomPitch(float min = -0.1f, float max = 0.1f) {
             audioSource.pitch += Random.Range(min, max);
         }
     }
