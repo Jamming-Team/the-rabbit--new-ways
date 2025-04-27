@@ -86,6 +86,7 @@ namespace Rabbit {
  
     public enum OtherNarrativeTypes {
         HideNarrativeViews,
+        SetSilents
     }
     
     

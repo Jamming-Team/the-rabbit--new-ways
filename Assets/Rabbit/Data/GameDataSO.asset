@@ -27,15 +27,20 @@ MonoBehaviour:
     - timeTillNextShadow: 3
       maxShadows: 4
   audio:
-    musicVolume: 0.001
-    sfxVolume: 0.56
+    musicVolume: 0.5
+    sfxVolume: 0.5
     music:
       bundles:
         _serializedList:
         - Key: 0
           Value:
             audioClips:
-            - {fileID: 8300000, guid: b98ebb24b5536e15fbedb899e484fdc3, type: 3}
+            - {fileID: 8300000, guid: f6699ed8c947f3cabbc10a32ba8c5545, type: 3}
+            shouldLoopFirstClip: 1
+        - Key: 1
+          Value:
+            audioClips:
+            - {fileID: 8300000, guid: 82960876cef48de949c62ba792074068, type: 3}
             shouldLoopFirstClip: 1
       crossFadeTime: 2
   references:

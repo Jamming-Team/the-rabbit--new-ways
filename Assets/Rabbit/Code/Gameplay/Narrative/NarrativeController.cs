@@ -69,6 +69,10 @@ namespace Rabbit {
                     _comicsRoot.SetActive(false);
                     break;
                 }
+                case OtherNarrativeTypes.SetSilents: {
+                    AudioManager.Instance.PlayMusic(MusicBundleType.Gameplay);
+                    break;
+                }
             }
 
             HandleNarrativeEnd();

@@ -19,6 +19,7 @@ MonoBehaviour:
   - rid: 6632277806128300234
   - rid: 6632277806128300238
   - rid: 6632277806128300240
+  - rid: 6632277858168864839
   - rid: 6632277826291105868
   - rid: 6632277837119750217
   - rid: 6632277826291105861
@@ -97,3 +98,12 @@ MonoBehaviour:
       type: {class: DoStuffStateData, ns: Rabbit, asm: Assembly-CSharp}
       data:
         stuffType: 0
+    - rid: 6632277858168864839
+      type: {class: NarrativeStateData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        narrative:
+          rid: 6632277858168864840
+    - rid: 6632277858168864840
+      type: {class: OtherNarrativeData, ns: Rabbit, asm: Assembly-CSharp}
+      data:
+        otherType: 1

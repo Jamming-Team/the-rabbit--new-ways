@@ -43,8 +43,12 @@ namespace Rabbit {
         //     }
         // }
 
-        public void LoadBundle(MusicBundleType bundleType) {
+        public bool LoadBundle(MusicBundleType bundleType) {
+
+            var check = _curType == bundleType;
             _curType = bundleType;
+
+            return check;
 
             // Clear();
             // var bundle = _musicBundles[bundleType];
@@ -64,6 +68,9 @@ namespace Rabbit {
 
         public void CheckForCrossFade() {
             // HandleCrossFade();
+            
+            if (!_current)
+                return;
 
             if (!_current.clip) return;
             

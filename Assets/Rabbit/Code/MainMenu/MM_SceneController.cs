@@ -7,6 +7,8 @@ namespace Rabbit {
 
         protected virtual void Start() {
             _stateMachine.Init(this, true);
+
+            AudioManager.Instance.PlayMusic(MusicBundleType.MainMenu);
         }
     }
 }

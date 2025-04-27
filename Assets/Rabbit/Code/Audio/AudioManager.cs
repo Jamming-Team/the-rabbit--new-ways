@@ -18,6 +18,8 @@ namespace Rabbit {
         public AudioData data { get; set; }
         
         MusicManager _music;
+
+        bool _initialized = false;
         
         
         void Start() {
@@ -30,11 +32,14 @@ namespace Rabbit {
                 sourceOne = _musicSources[0],
                 sourceTwo = _musicSources[1]
             });
-            
-            _music.LoadBundle(MusicBundleType.MainMenu);
-            _music.PlayNextTrack();
+
 
             GameEvents.Data.OnDataChanged += AdjustMixerVolume;
+
+            _initialized = true;
+            
+            PlayMusic(MusicBundleType.MainMenu, true);
+
 
         }
 
@@ -43,11 +48,14 @@ namespace Rabbit {
         }
 
         void Update() {
+            if (!_initialized)
+                return;
+            
             _music.CheckForCrossFade();
 
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                PlaySound(_testSound);
-            }
+            // if (Input.GetKeyDown(KeyCode.Space)) {
+            //     PlaySound(_testSound);
+            // }
         }
 
         public SoundEmitter PlaySound(SoundData soundData, Transform playTransform = null) {
@@ -70,6 +78,19 @@ namespace Rabbit {
 
         public void Accept(IVisitor visitor) {
             visitor.Visit(this);
+        }
+
+        public void PlayMusic(MusicBundleType type, bool skipCheck = false) {
+            if (!_initialized)
+                return;
+            
+            var flag = _music.LoadBundle(type);
+            
+            
+            if (!skipCheck && flag)
+                return;
+            
+            _music.PlayNextTrack();
         }
 
 
