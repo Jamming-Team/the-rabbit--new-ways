@@ -25,6 +25,11 @@ MonoBehaviour:
       maxShadows: 2
     - timeTillNextShadow: 2
       maxShadows: 3
+  audio:
+    musicVolume: 0.89
+    sfxVolume: 0.56
+    music:
+      crossFadeTime: 2
   references:
     version: 2
     RefIds:

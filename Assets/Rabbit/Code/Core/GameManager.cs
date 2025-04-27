@@ -27,5 +27,7 @@ namespace Rabbit
         public void RequestData(IVisitable requester) {
             _dataManager.TrySupply(requester);
         }
+        
+
     }
 }

@@ -32,5 +32,9 @@ namespace Rabbit {
         public void Visit(GP_SceneController requester) {
             requester.data = _dataSO.content;
         }
+        
+        public void Visit(AudioManager requester) {
+            requester.data = _dataSO.audio;
+        }
     }
 }

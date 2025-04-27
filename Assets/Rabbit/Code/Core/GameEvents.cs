@@ -23,6 +23,10 @@ namespace Rabbit {
             public static Action<INarrativeData> OnStartNarrative;
             public static Action OnEndNarrative;
         }
+
+        public static class Data {
+            public static Action OnDataChanged;
+        }
         
     }
 }
