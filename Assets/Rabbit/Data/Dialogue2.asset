@@ -17,5 +17,5 @@ MonoBehaviour:
     shouldEye: 0
   - text: Do you believe you can tear the fabric of night?
     shouldEye: 1
-  - text: I will rid you of these delusion.
+  - text: I will rid you of these delusions.
     shouldEye: 0

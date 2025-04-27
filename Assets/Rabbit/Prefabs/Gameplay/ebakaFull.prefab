@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _phaseDuration: 5
-  _maxPhases: 5
+  _maxPhases: 6
   _running:
     clips:
     - {fileID: 8300000, guid: d8910a08c8af4fa2785390e8c72af4c2, type: 3}

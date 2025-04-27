@@ -19,5 +19,5 @@ MonoBehaviour:
     shouldEye: 1
   - text: Tomorrow we'll meet again.
     shouldEye: 0
-  - text: I'm in darkness is always near and waiting for you.
+  - text: I AM the <i>darkness<i>, always near and waiting for you
     shouldEye: 0

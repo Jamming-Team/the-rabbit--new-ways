@@ -15,7 +15,7 @@ MonoBehaviour:
   parts:
   - text: Don't resist, it's useless.
     shouldEye: 0
-  - text: Darkness is already here, I'm is here.
+  - text: <i>Darkness<i> is already here, I'm here.
     shouldEye: 0
   - text: Just let me get close.
     shouldEye: 0

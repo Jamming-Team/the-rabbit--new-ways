@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialogue3
   m_EditorClassIdentifier: 
   parts:
-  - text: The more light, the more shadow I can give rise to.
+  - text: The more light, the more <i>shadow<i> I can give rise to.
     shouldEye: 0
   - text: This is the grand balance on which our world rests.
     shouldEye: 0
