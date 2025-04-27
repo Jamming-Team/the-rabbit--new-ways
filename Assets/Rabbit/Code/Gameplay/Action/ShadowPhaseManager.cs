@@ -27,6 +27,11 @@ namespace Rabbit
         
         void OnDestroy() {
             GameEvents.Gameplay.OnGameplayUpdate -= OnGameplayUpdate;
+
+            if (_runningEmitter) {
+                _runningEmitter.Stop();
+                _runningEmitter = null;
+            }
         }
 
         void OnGameplayUpdate(float obj) {

@@ -18,17 +18,17 @@ MonoBehaviour:
     defeatBlock:
     - rid: 6632277853031629046
     - rid: 6632277853031629048
-    currentBlockNum: 0
+    currentBlockNum: 1
     difficulties:
     - timeTillNextShadow: 5
       maxShadows: 1
     - timeTillNextShadow: 3
-      maxShadows: 2
-    - timeTillNextShadow: 3
-      maxShadows: 4
+      maxShadows: 3
+    - timeTillNextShadow: 2
+      maxShadows: 5
   audio:
     musicVolume: 0.5
-    sfxVolume: 0.5
+    sfxVolume: 0.8
     music:
       bundles:
         _serializedList:

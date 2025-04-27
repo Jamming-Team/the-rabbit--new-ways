@@ -57,6 +57,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6272519146615806108, guid: b354d76986cd231dfbeae7402917aa92, type: 3}
+      propertyPath: _running.maxDistance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272519146615806108, guid: b354d76986cd231dfbeae7402917aa92, type: 3}
       propertyPath: _exiting.clips.Array.size
       value: 1
       objectReference: {fileID: 0}

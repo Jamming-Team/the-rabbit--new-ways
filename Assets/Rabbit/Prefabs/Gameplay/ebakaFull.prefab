@@ -114,7 +114,7 @@ MonoBehaviour:
     bypassListenerEffects: 0
     bypassReverbZones: 0
     priority: 128
-    volume: 1
+    volume: 10
     pitch: 1
     panStereo: 0
     spatialBlend: 1
@@ -122,7 +122,7 @@ MonoBehaviour:
     dopplerLevel: 1
     spread: 0
     minDistance: 1
-    maxDistance: 15
+    maxDistance: 20
     ignoreListenerVolume: 0
     ignoreListenerPause: 0
     rolloffMode: 2
